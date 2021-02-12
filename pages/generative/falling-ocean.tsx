@@ -1,12 +1,15 @@
 import React from 'react'
-import type { ReactElement } from 'react'
 import Layout from '../../components/Layout'
+import dynamic from 'next/dynamic'
+const FallingOceanComponent = dynamic(
+  () => import('@prkirby/pts-sandbox').then((mod) => mod.FallingOcean),
+  { ssr: false }
+)
 
-export default function FallingOcean(): ReactElement {
-  if (typeof window !== 'undefined') {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { FallingOcean: FallingOceanSketch } = require('@prkirby/pts-sandbox')
-    new FallingOceanSketch().run()
-  }
-  return <Layout title="Falling Ocean - A ptsJS sketch by Paul Kirby"></Layout>
-}
+const FallingOcean: React.FC = () => (
+  <Layout title="Falling Ocean - A ptsJS sketch by Paul Kirby">
+    <FallingOceanComponent />
+  </Layout>
+)
+
+export default FallingOcean

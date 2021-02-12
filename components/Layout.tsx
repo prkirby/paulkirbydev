@@ -10,7 +10,7 @@ const Layout: React.FC<Props> = ({ title, children }) => (
     <Head>
       <title>{title}</title>
     </Head>
-    <div className="container">{children}</div>
+    {children}
   </>
 )
 
