@@ -7,4 +7,4 @@ export interface ContainerProps {
 export const Container: React.FC<ContainerProps> = ({
   className = '',
   children,
-}) => <div className={`container mx-auto ${className}`}>{children}</div>
+}) => <div className={`container p-4 mx-auto ${className}`}>{children}</div>

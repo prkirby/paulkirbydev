@@ -15,7 +15,7 @@ export const Layout: React.FC<Props> = ({ title, children }) => (
         rel="stylesheet"
       />
     </Head>
-    <div className="flex font-sans font-light min-h-screen bg-gray-200">
+    <div className="flex font-sans font-light min-h-screen bg-gray-100">
       {children}
     </div>
   </>
