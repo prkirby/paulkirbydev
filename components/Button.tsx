@@ -8,7 +8,11 @@ const GravityMesh = dynamic(
   { ssr: false }
 )
 
-export const Button: React.FC = ({ children }) => {
+interface ButtonProps {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export const Button: React.FC<ButtonProps> = ({ children, onClick = null }) => {
   const [hover, setHover] = useState(false)
 
   return (
@@ -17,6 +21,7 @@ export const Button: React.FC = ({ children }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{ cursor: 'none' }}
+      onClick={onClick}
     >
       <div className="absolute inset-0">
         <GravityMesh

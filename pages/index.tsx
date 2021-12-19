@@ -1,17 +1,16 @@
 import React, { ReactElement } from 'react'
 import Link from 'next/link'
-import { Button, Container, Layout } from '../components/'
+import { Layout, Container, Button } from '@components'
+import { H1 } from '@components/Headers'
 
 export default function Home(): ReactElement {
   return (
     <Layout title="Paul Kirby Dev">
-      <Container className="flex flex-col flex-wrap content-center justify-center min-h-full">
+      <Container>
         <div className="flex flex-col content-center justify-center">
-          <h1 className="flex-none font-sans text-2xl md:text-3xl font-thin text-center pb-4">
-            Hello! My name is Paul.
-          </h1>
+          <H1>Hello! My name is Paul.</H1>
           <div className="flex flex-col items-center justify-center space-y-4">
-            <Link href="/generative/falling-ocean" prefetch={false}>
+            <Link href="/generative" prefetch={false}>
               <a className="w-full text-center">
                 <Button>Generative Works</Button>
               </a>

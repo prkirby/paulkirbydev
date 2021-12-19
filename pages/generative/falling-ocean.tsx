@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout } from '../../components'
+import { Layout } from '@components/Layout'
 import dynamic from 'next/dynamic'
 const FallingOceanComponent = dynamic(
   () => import('@prkirby/pts-sandbox').then((mod) => mod.FallingOcean),
